@@ -1,0 +1,66 @@
+@font-face{font-family: 'Kosugi'; src: url("../fonts/Kosugi-Regular.ttf") format('truetype');}
+
+body{
+	background-position:center; background-attachment: fixed; background-size: cover;
+	background-color: #070707; 
+	font-family:'Courier';
+	font-weight:normal;
+	text-align:center;
+	line-height:1;
+	color: #f4f1e8;
+	letter-spacing:5px;
+	margin: 0 auto;
+}
+
+/* Text decoration */
+
+hr { border-bottom-width:2px; border-color:#e5b7e5; }
+
+a:hover { color: #ce73ce; cursor:help; }
+a 		{ color: #e5b7e5; text-decoration:none; }
+
+h2, h3, h4, h5 {
+	font-family: 'Times New Roman';
+	font-weight:normal;
+	margin-left:10px;
+	margin-right:10px;
+}
+
+h1 { font-size:20px; letter-spacing:9px; font-weight:normal;}
+h2 { font-size:18px; }
+h3 { font-size:16px; }
+h4 { font-size:12px; }
+h5 { font-size:10px; }
+
+/* Scrollbar */
+
+::-webkit-scrollbar {width: 2px;height:2px;}
+::-webkit-scrollbar-track {background: #070707;}
+::-webkit-scrollbar-thumb {background: #555;}
+::-webkit-scrollbar-thumb:hover {background: #f4f1e8;}
+::-webkit-scrollbar-corner {background: #070707;}
+
+/* Class controls */
+
+.hide { display:none; }
+
+/* Animations */
+
+.glowtext { animation: titleAnim 5s infinite; }
+@keyframes titleAnim{
+	50%{
+		color:#edcbed;
+		text-shadow:#e54bcb 1px 4px 5px;
+	}
+}
+
+/* Custom elements */
+
+.block {
+	background-color:#070707;
+	width:55%;
+	height:auto;
+	margin: 35px auto 10px auto;
+	box-shadow:#e5b7e5 0px 0px 2px;
+	padding:1px;
+}
