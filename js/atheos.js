@@ -1,5 +1,5 @@
 
-var winIndex = [];
+let winIndex = [];
 
 $(document).ready( function() {
 	//$(".draggable").draggable();
