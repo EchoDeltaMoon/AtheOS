@@ -36,7 +36,7 @@ function loadWallpaper(): void {
 
 //------------------windows mechanic----------------
 
-function deployWindow(url: string, name: string, link: string) {
+function deployWindow(url: string, name: string, link: string): void {
 	for (let i:number = 0; i < winIndex.length; i ++) {
 		if (winIndex[i].name == name) {
 			focusWindow(i);
@@ -47,23 +47,23 @@ function deployWindow(url: string, name: string, link: string) {
 	windowCounter();
 }
 
-function closeWindow(id: number) {
+function closeWindow(id: number): void {
 	$('#win-id-' + id).remove();
 	winIndex.splice(id, 1);
 	sortWindows();
 	windowCounter();
 }
 
-function maximizeWindow(id: number) {
+function maximizeWindow(id: number): void {
 	let url = $('#win-id-' + id).find('.win-frame').attr('src');
 	window.open(url, '_blank'); 
 }
 
-function minimizeWindow(id: number) {
+function minimizeWindow(id: number): void {
 	$('#win-id-' + id).css('display', 'none');
 }
 
-function sortWindows() {
+function sortWindows(): void {
 	for (let i:number = 0; i < winIndex.length; i ++) {
 		if (winIndex[i].id !== i) {
 			winIndex[i].setId(winIndex[i].id, i);
@@ -71,7 +71,7 @@ function sortWindows() {
 	}
 }
 	
-function focusWindow(id: number) {
+function focusWindow(id: number): void {
 	$('#win-id-' + id).css('display', 'inline-block');
 	let actIndex = parseInt($('#win-id-' + id).css('z-index'));
 	for (let i:number = 0; i < winIndex.length; i ++) {
@@ -85,7 +85,7 @@ function focusWindow(id: number) {
 	$('#win-id-' + id).css('z-index', '50');
 }
 
-function windowCounter() {
+function windowCounter(): void {
 	$('#infomenu').html('Win: ' + winIndex.length);	
 }
 
@@ -135,7 +135,7 @@ class AWindow {
 		focusWindow(this.id);
 	}
 
-	setListeners() {
+	setListeners(): void {
 		let $window: JQuery = $('#win-id-' + this.id);
 		let id: number = this.id;
 		//set click event for window
@@ -151,7 +151,7 @@ class AWindow {
 		});
 	}
 
-	setId(id: number, newId: number) {
+	setId(id: number, newId: number): void {
 		this.id = newId;
 		let $window: JQuery = $('#win-id-' + id);
 		$window.attr('id', 'win-id-' + this.id);
@@ -161,7 +161,7 @@ class AWindow {
 		this.setListeners();
 	}
 
-	makeResizable() {
+	makeResizable(): void {
 		const minWidth: number = 500;
 		const minHeight: number = 200;
 	
@@ -171,18 +171,18 @@ class AWindow {
 		$list.on('mousedown', function(){
 			$window.draggable('disable');
 			$(this).css({
-				width: 300,
-				height: 300,
-				right: -150,
-				bottom: -150
+				width: 600,
+				height: 600,
+				right: -300,
+				bottom: -300
 			});
 			$(this).on('mousemove', function(e) {
 				let offset: any = $(this).offset();
 				let x: number = e.pageX - offset.left;
 				let y: number = e.pageY - offset.top;
         let $par = <any>$(this).parent();
-        let newWidth: number = $par.width() + (x - 150);
-        let newHeight: number = $par.height() + (y - 150);
+        let newWidth: number = $par.width() + (x - 300);
+        let newHeight: number = $par.height() + (y - 300);
         if (newWidth >= minWidth){
           $par.width(newWidth);
         }

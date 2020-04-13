@@ -6,7 +6,7 @@ $("document").ready(function () {
 });
 function loadPosts(json) {
     let $posts = $('#posts');
-    for (let i in json.posts) { //for every post in json
+    for (let i in json.posts) {
         let $post = $('<div></div>').addClass('block');
         $posts.append($post);
         let title = '<h2>' + json.posts[i].data.title + '</h2>';
@@ -16,7 +16,7 @@ function loadPosts(json) {
         let $comments = $('<div></div>').addClass('comments');
         let login = '<div class="' + json.posts[i].allowed + '"></div>';
         $post.append(title, name, date, '<hr>', text, $comments, login, '<br>');
-        for (let j in json.posts[i].comments) { //for every comment in post
+        for (let j in json.posts[i].comments) {
             let $message = $('<div></div>').addClass('messagebox');
             $comments.append($message);
             let icon = '<div class="uicon ' + json.posts[i].comments[j].uicon + '"></div>';

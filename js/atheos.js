@@ -142,18 +142,18 @@ class AWindow {
         $list.on('mousedown', function () {
             $window.draggable('disable');
             $(this).css({
-                width: 300,
-                height: 300,
-                right: -150,
-                bottom: -150
+                width: 600,
+                height: 600,
+                right: -300,
+                bottom: -300
             });
             $(this).on('mousemove', function (e) {
                 let offset = $(this).offset();
                 let x = e.pageX - offset.left;
                 let y = e.pageY - offset.top;
                 let $par = $(this).parent();
-                let newWidth = $par.width() + (x - 150);
-                let newHeight = $par.height() + (y - 150);
+                let newWidth = $par.width() + (x - 300);
+                let newHeight = $par.height() + (y - 300);
                 if (newWidth >= minWidth) {
                     $par.width(newWidth);
                 }
