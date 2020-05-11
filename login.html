@@ -9,6 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<style>
 			body { background-image: url("images/backgrounds/login.gif"); }
+			.hidden {display: none;}
 		</style>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -16,6 +17,37 @@
 			function playSound(id) {
 				$(id)[0].play();
 			}
+			let eyeState = 0;
+			let c, ctx, x, y;
+			$(document).ready( function() {
+				setInterval(eyeBallHand, 250);
+				c = document.getElementById("eye");
+  			ctx = c.getContext("2d");
+			});
+			$(document).mousemove(function( event ) {
+				x = (event.pageX - 128 - $('#eye').offset().left)
+				y = (event.pageY - 24 - $('#eye').offset().top)
+			});
+			function eyeBallHand() {
+				let $form = $(':focus');
+				if ($form.length) {
+					if (eyeState < 3) eyeState ++;
+				} else {
+					if (eyeState > 0) eyeState --;
+				}
+				//console.log('x: ' + x + '| y: ' + y);
+				let img = document.getElementById('eye' + eyeState);
+				let imgb = document.getElementById('eyeb');
+				ctx.clearRect(0, 0, c.width, c.height);
+				if (eyeState > 0) {
+					let _x = x/15;
+					let _y = y/40;
+					ctx.drawImage(imgb, _x, _y);
+				}
+  			ctx.drawImage(img, 0, 0);
+				//$('#eye').attr('src', `images/eyes/eye${eyeState}.png`);
+			}
+			
 		</script>
 	</head>
 	
@@ -34,6 +66,12 @@
 			<br>
 			<hr>
 			<br>
+			<canvas id="eye" width="256" height="48" ></canvas>
+			<img src="images/eyes/eye0.png" id="eye0" class="hidden">
+			<img src="images/eyes/eye1.png" id="eye1" class="hidden">
+			<img src="images/eyes/eye2.png" id="eye2" class="hidden">
+			<img src="images/eyes/eye3.png" id="eye3" class="hidden">
+			<img src="images/eyes/eyeball.png" id="eyeb" class="hidden">
 			<p>
 				<label>Login<br></label>
 				<input id="logiId" type = "text" value = "">
