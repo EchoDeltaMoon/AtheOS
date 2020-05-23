@@ -17,6 +17,9 @@
 		<link rel="stylesheet" type="text/css" href="css/oc-icons.css">
 		
 		<script>
+      if (/Mobi|Android/i.test(navigator.userAgent)) {
+        window.open('mobile.html', '_self')
+      }
 			window.location.hash = '';
 		</script>
 	</head>
