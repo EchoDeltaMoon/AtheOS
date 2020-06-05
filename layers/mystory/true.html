@@ -9,13 +9,15 @@
 		<link rel="stylesheet" type="text/css" href="../../css/main.css">
 		<link rel="stylesheet" type="text/css" href="../../css/csshake.css">
 		<style> 
-			body {background-color: #fcc5ea ; color: black;} 
+			body {background-color: #ca8596 ; color: black;} 
 			a {color: #400d4f;} 
 		</style>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="../../js/audio.js"></script>
 		<script>
-			$('#win-frame', window.parent.document).attr('src', 'layers/mystory/now.html#');
+			audioStoryStopAll();
+			audioStoryPlay(1);
 		</script>
 	</head>	
 	

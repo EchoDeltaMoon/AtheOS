@@ -12,9 +12,10 @@
 		<style> body {background-color: #fcc5ea ;} </style>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="../js/audio.js"></script>
 		<script>
-			parent.document.getElementById("mystorymusic").play();
-			$('#win-frame', window.parent.document).attr('src', 'layers/my-story.html#');
+			audioStoryStopAll();
+			audioStoryPlay(0);
 		</script>
 	</head>
 	
@@ -48,6 +49,16 @@
 		<div class="dLink"><a href="mystory/forgive.html">
 			<div class="dIcon dIcon-Txt"></div>
 			許す
+		</a></div>
+		
+		<div class="dLink"><a href="mystory/hurt.html">
+			<div class="dIcon dIcon-Txt"></div>
+			Hurt
+		</a></div>
+		
+		<div class="dLink"><a href="mystory/blood.html">
+			<div class="dIcon dIcon-Txt"></div>
+			血液
 		</a></div>
 		
 	</body>
