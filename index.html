@@ -21,6 +21,8 @@
         window.open('mobile.html', '_self')
       }
 			window.location.hash = '';
+			$(document).ready(() => {setTimeout(changeBack, 1)});
+			function changeBack() {$('#page').css('background-image', 'url("images/backgrounds/okay.gif")');}
 		</script>
 	</head>
 	
@@ -36,7 +38,7 @@
 			<script>loadWallpaper();</script>
 			<div class="icon-line"> <!-- LINE 1 -->
 				<div class="dLink"><a href="#" ondblclick="deployWindow('about.html', 'about', 'C:/ユーザー/AL1-CE/about.inf')">
-					<div class="dIcon dIcon-About"></div>
+					<div class="dIcon dIcon-Broken"></div>
 					About
 				</a></div>
 				
@@ -55,8 +57,8 @@
 					Chat
 				</a></div>
 				
-				<div class="dLink"><a href="#" ondblclick="deployWindow('', 'music','C:/ユーザー/AL1-CE/music.bat')">
-					<div class="dIcon dIcon-Snd"></div>
+				<div class="dLink"><a href="#" ondblclick="deployWindow('nohelp.html', 'music','C:/ユーザー/AL1-CE/music.bat')">
+					<div class="dIcon dIcon-Broken"></div>
 					Music
 				</a></div>
 			</div>
@@ -98,22 +100,49 @@
 					Layer
 				</a></div>
 				
-				<div class="dLink"><a href="#" ondblclick="deployWindow('backs.html', 'wallpaper', 'C:/ユーザー/AL1-CE/wallpaper.bat')">
-					<div class="dIcon dIcon-OFold"></div>
+				<div class="dLink"><a href="#" ondblclick="deployWindow('nohelp.html', 'wallpaper', 'C:/ユーザー/AL1-CE/wallpaper.bat')">
+					<div class="dIcon dIcon-Broken"></div>
 					Backs
 				</a></div>
 				
-				<div class="dLink"><a href="#" ondblclick="deployWindow('knowledge.html', 'knowledge', 'attr://knowledge.io/')">
-					<div class="dIcon dIcon-Know"></div>
+				<div class="dLink"><a href="#" ondblclick="deployWindow('nohelp.html', 'knowledge', 'attr://knowledge.io/')">
+					<div class="dIcon dIcon-Broken"></div>
 					Know
 				</a></div>
 			</div>
-			
-			<div id="story">
-				<a href="whatnext.html"><h3>I thought about my work but it seems not that perfect to me. Now I should do what my heart wants.</h3></a>
-			</div>
-			
+				
 		</div>
+
+		<a href="#" onclick="deployWindow('hope.html', 'hope', 'hope')" id="hope-spark" style="position: absolute; left: 600px; top: 300px;">
+			<img src="images/spark.gif" style="width: 100px;"/>
+		</a>
+
+		<script>
+			setInterval(moveSpark, 14);
+			function moveSpark() {
+				let $s = $('#hope-spark');
+				let x = parseInt($s[0].style.left);
+				let y = parseInt($s[0].style.top);
+				let size = {
+					width: window.innerWidth || document.body.clientWidth,
+					height: window.innerHeight || document.body.clientHeight
+				}
+				$s[0].style.left =  x + getRandom(-5, 6) + 'px';
+				$s[0].style.top =  y + getRandom(-5, 6) + 'px';
+				if ($s[0].style.left < 0) {$s[0].style.left = 0;}
+				if ($s[0].style.top < 0) {$s[0].style.top = 0;}
+				if ($s[0].style.left > size.width) {$s[0].style.left = size.width;}
+				if ($s[0].style.top > size.height) {$s[0].style.top = size.height;}
+			}
+			function getRandom(min, max) {
+				return min + (Math.random() * (Math.abs(max) + Math.abs(min)));
+			}
+		</script>
+			
+		<!--div id="story">
+			<a href="whatnext.html"><h3>I thought about my work but it seems not that perfect to me. Now I should do what my heart wants.</h3></a>
+		</div-->
+			
 		
 		<!-------------------------------------TECH-------------------------------------------->
 				
@@ -133,12 +162,17 @@
 			<source src="sounds/mp3/mystory_d3.mp3" type="audio/mpeg">
 			<source src="sounds/ogg/mystory_d3.ogg" type="audio/ogg">
 		</audio>
+		<audio id="imok" loop autoplay>
+			<source src="sounds/mp3/imok.mp3" type="audio/mpeg">
+			<source src="sounds/ogg/imok.ogg" type="audio/ogg">
+		</audio>
 
 		<script>
 			document.getElementById("snd-st-d-0").volume = 0.15;
 			document.getElementById("snd-st-d-1").volume = 0.15;
 			document.getElementById("snd-st-d-2").volume = 0.15;
 			document.getElementById("snd-st-d-3").volume = 0.15;
+			document.getElementById("imok").volume = 0.15;
 		</script>
 		
 	</body>
