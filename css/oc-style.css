@@ -219,7 +219,7 @@
 
 #loader h2 {
 	letter-spacing:9px; font-weight:normal;
-	position: absolute; top: 40%; left: 50%;
+	position: absolute; top: calc( 30% + 110px ); left: 50%;
   transform: translate(-55%, -50%);
 	font-size:20px;
 	animation: txtBootUp 6s infinite;
