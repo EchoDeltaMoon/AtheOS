@@ -1,9 +1,46 @@
 {
   "posts":[   
-   {
+    {
+      "data":{
+	    	"title":" ",
+        "uname":"al1-ce", 
+        "date":"10.07.XX", 
+        "text":"И познаете истину, и истина сделает вас свободными."
+      },
+      "comments":[
+        {
+          "uicon":"icon_ritsuko", 
+          "uname":"Ritsuko",
+          "text":"And what was that?"
+        },
+        {
+          "uicon":"icon_who", 
+          "uname":"???",
+          "text":"Login page was offline, what happened, really?"
+        },
+        {
+          "uicon":"icon_neko", 
+          "uname":"(っ◔◡◔)っ ♥　ねこ ♥",
+          "text":"NEKO is not happy with this! :( WHAT SHOULD NEKO DO NOW"
+        },
+        {
+          "uicon":"icon_lain", 
+          "uname":"レイン",
+          "text":"Let that being live on their own"
+        },
+        {
+          "uicon":"icon_aesthetic", 
+          "uname":"𝔸𝕖𝕤𝕥𝕙𝕖𝕥𝕚𝕔",
+          "text":"So here we exists"
+        }
+      ],
+      "allowed":"post-login"
+    },
+    
+    {
       "data":{
 	    	"title":"Violence",
-        "uname":"AL1-CE", 
+        "uname":"al1-ce", 
         "date":"14.03.XX", 
         "text":"There's a lot of violence in the world. Pathetic humans are so aggressive. World became so deadly.<br>What you were thinking when created such of a fatal tech?"
       },
@@ -57,7 +94,7 @@
     {
       "data":{
 	    	"title":"Layers?",
-        "uname":"AL1-CE", 
+        "uname":"al1-ce", 
         "date":"01.03.XX", 
         "text":"How much the layer can reveal? Nothing!<br>But what if I say that there're more then one layer here. What then?"
       },
@@ -89,7 +126,7 @@
     {
       "data":{
 	    	"title":"The <span class='glowtext'>VOID</span> appeared",
-        "uname":"AL1-CE", 
+        "uname":"al1-ce", 
         "date":"26.02.XX", 
         "text":"Brace yourself for the new Void. The way is clear. The knowlenge is near."
       },
@@ -123,7 +160,7 @@
     {
       "data":{
 	    	"title":"the flow",
-        "uname":"AL1-CE", 
+        "uname":"al1-ce", 
         "date":"16.02.XX", 
         "text":"<iframe width='98%' height='415' src='https://www.youtube.com/embed/m5pbmt9VSTM' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
       },
@@ -152,7 +189,7 @@
     {
       "data":{
 	    	"title":"We wait. We know.",
-        "uname":"AL1-CE", 
+        "uname":"al1-ce", 
         "date":"14.02.XX", 
         "text":"The update of the void is near. You all shall wait some time to be awarded by the <span class='glowtext'>New Void</span></h3><img src='images/posts-img/postupdate.gif' style='width:435px' /><h1>始まり" 
       },
@@ -177,7 +214,7 @@
     {
       "data":{
 	    	"title":"Can we post the line?",
-        "uname":"AL1-CE", 
+        "uname":"al1-ce", 
         "date":"01.02.XX", 
         "text":"So the point of itself just ubnormous.</h3><img src='images/posts-img/eyes.gif' style='width:72px' /><h3> Can we, the humanity make the difference between good and evil? Can line be posted with itself?" 
       },
@@ -202,7 +239,7 @@
     {
       "data":{
 	    	"title":"Here",
-        "uname":"AL1-CE", 
+        "uname":"al1-ce", 
         "date":"21.01.XX", 
         "text":"We are all here" 
       },
@@ -219,7 +256,7 @@
     {
       "data":{
 	    	"title":"Когда зло господствует",
-        "uname":"AL1-CE", 
+        "uname":"al1-ce", 
         "date":"16.01.XX", 
         "text":"So you, the user, who are the most unique user on this void, just making a beautiful thing and putting it in trash bin. Isn't it a nice move for fiend?" 
       },
@@ -244,7 +281,7 @@
     {
       "data":{
     		"title":"New begining",
-        "uname":"AL1-CE", 
+        "uname":"al1-ce", 
         "date":"00.00.XX", 
         "text":"The void just vanished. May it be a new way to observe the world and the void or just error from my hand" 
       },

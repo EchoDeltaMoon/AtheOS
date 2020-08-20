@@ -179,12 +179,12 @@
 }
 
 #scanlines {
-  	background-image: url("../images/scanlines.png");
+  background-image: url("../images/scanlines.png");
 	background-repeat: repeat;
 	position:absolute; top: 0px; left: 0px;
-	width: 100%; height: 100%; z-index:100;
+	width: 100%; height: 100%; z-index:9999;
 	animation: scanAnim 0.7s infinite;
-  	animation-timing-function: linear;
+  animation-timing-function: linear;
 	pointer-events: none;
 }
 
@@ -197,3 +197,65 @@
 	}
 }
 
+#loader {
+	background-color: rgba(7, 7, 7, 1);
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 8888;
+	animation: imgBootUp 6s infinite;
+  animation-timing-function: linear;
+}
+
+#loader h1 {
+	position: absolute; top: 30%; left: 50%;
+  transform: translate(-50%, -50%);
+	font-size:100px;
+	animation: txtBootUp 6s infinite;
+  animation-timing-function: linear;
+}
+
+#loader h2 {
+	letter-spacing:9px; font-weight:normal;
+	position: absolute; top: 40%; left: 50%;
+  transform: translate(-55%, -50%);
+	font-size:20px;
+	animation: txtBootUp 6s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes imgBootUp {
+	95% {
+		opacity: 1.0;
+		background-color: rgba(7, 7, 7, 1);
+	}
+
+	100% {
+		opacity: 0.0;
+		background-color: rgba(7, 7, 7, 0);
+	}
+}
+
+@keyframes txtBootUp {
+	0% {
+		opacity: 0.0;
+	}
+
+	10% {
+		opacity: 0.0;
+	}
+
+	32% {
+		opacity: 1.0;
+	}
+
+	95% {
+		opacity: 1.0;
+	}
+
+	100% {
+		opacity: 0.0;
+	}
+}
