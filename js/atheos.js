@@ -1,5 +1,5 @@
-"use strict";
 let winIndex = [];
+
 $(document).ready(function () {
     $('#infomenu').mouseenter(function (e) {
         if (winIndex.length == 0 || $('#docker').length) {

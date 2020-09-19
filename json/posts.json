@@ -2,6 +2,30 @@
   "posts":[   
     {
       "data":{
+	    	"title":"Soon",
+        "uname":"al1-ce", 
+        "date":"12.09.XX", 
+        "text":"Soon the <span class='glowtext'>AtheOS</span> would recieve huge update. Stay tuned"
+      },
+      "comments":[
+      ],
+      "allowed":"post-restrict"
+    },
+    
+    {
+      "data":{
+	    	"title":"os-void.boot.12-09-20.log",
+        "uname":"Automated AtheOS Post System", 
+        "date":"12.09.XX", 
+        "text":"<span style='text-align:left;'>initialising bootup properties<br><span style='color:#08ff52' >success</span><br>getting access to memory<br><span style='color:#08ff52' >success</span><br>getting access to network<br><span style='color:#08ff52' >success</span><br>starting bootup sequence<br>... <br><span style='color:red' >bootup interrupted</span><br><span style='color:red' >exit error = 49 74 20 61 6c 6d 6f 73 74 20 74 68 65 72 65</span><br><br>[Signal lost]</span>"
+      },
+      "comments":[
+      ],
+      "allowed":"post-restrict"
+    },
+    
+    {
+      "data":{
 	    	"title":" ",
         "uname":"al1-ce", 
         "date":"10.07.XX", 
@@ -148,7 +172,7 @@
     {
       "data":{
 	    	"title":"больше нет пути назад",
-        "uname":"Automated V.O.I.D. Post System", 
+        "uname":"Automated AtheOS Post System", 
         "date":"16.02.XX", 
         "text":"The VOID opened it's gate. Confront the forming VOID. Go for your way"
       },
@@ -177,7 +201,7 @@
     {
       "data":{
 	    	"title":"os-void.boot.15-02-20.log",
-        "uname":"Automated V.O.I.D. Post System", 
+        "uname":"Automated AtheOS Post System", 
         "date":"15.02.XX", 
         "text":"<span style='text-align:left;'>initialising bootup properties<br><span style='color:#08ff52' >success</span><br>getting access to memory<br><span style='color:#08ff52' >success</span><br>getting access to network<br><span style='color:#08ff52' >success</span><br>starting bootup sequence<br>... <br><span style='color:red' >bootup interrupted</span><br><span style='color:red' >exit error = 596f75277265206e6f74207265616479</span><br><br>[Signal lost]</span>"
       },
