@@ -54,9 +54,6 @@ h5 { font-size:10px; }
 	}
 }
 
-
-.glitch {
-}
 .glitch::before {
   content: attr(data-text);
   position: absolute;

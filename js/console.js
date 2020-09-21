@@ -1,0 +1,49 @@
+let inProgram = 0;
+let lastInput = '';
+
+$(document).ready( () => {
+  printDefault();
+
+  $('#input').keypress(function (e) {
+      if(e.which == 13) { // enter
+        let value = $(this).val();
+        $(this).val('');
+        lastInput = value;
+        printf('$:' + value);
+        e.preventDefault();
+        if (value.trim().length < 1) return;
+        if (!inProgram) {
+          parseValue(value);
+        } else {
+          promiseResolve();
+        }
+      }
+  });
+});
+
+function parseValue(val) {
+  ///parse here
+  let text = val.split(' ').filter(i => i);
+  let usCom = text[0] in commands;
+  let hdCom = text[0] in hidCommands;
+  if (!(usCom || hdCom)) {
+    printf(`Function '${text[0]}' not found`, 'red');
+    printf(' ');
+    return;
+  }
+  let func = usCom ? commands[ text[0] ][0] : hidCommands[ text[0] ][0];
+  func(text[1]);
+  //else goes here
+  if (text[0] !== 'cls' && !inProgram) {
+    printf(' ');
+  }
+}
+
+function printDefault() {
+  const currDate = new Date().toString().split('GMT')[0];
+  printf('AtheOS Command System [Version 1.1.X]');
+  printf('Copyright (c) 20XX AL1-CE. All rights reserved.');
+  printf(' ');
+  printf('Current time: ' + currDate);
+  printf(' ');
+}
