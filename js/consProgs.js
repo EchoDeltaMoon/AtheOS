@@ -1,6 +1,7 @@
 const hidCommands = {
   doyoulikeme: [progDoYouLikeMe, 'Input await test'],
-  movingtest: [progCoordTest, 'Coords test']
+  movingtest: [progCoordTest, 'Coords test'],
+  rogue: [progRogue, 'Roguelike adventure']
 }
 
 let promiseResolve;

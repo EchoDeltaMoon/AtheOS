@@ -14,52 +14,57 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="../js/audio.js"></script>
 		<script>
-			audioStoryStopAll();
+			let frameId = 0;
+			$(document).ready(() => {
+				const urlParams = new URLSearchParams(window.location.search);
+				frameId = urlParams.get('id');
+				$(`#win-id-${frameId} .win-text`, window.parent.document).html('C:/ユーザー/AL1-CE/layer/物語/');
+			});
 			audioStoryPlay(0);
 		</script>
 	</head>
 	
-	<body>
+	<body onunload='audioStoryStopAll();'>
 		
-		<div class="dLink"><a href="../layer.html">
+		<div class="dLink"><button class="button" ondblclick="window.location.href = '../layer.html' + '?id=' + frameId">
 		<div class="dIcon dIcon-OFold"></div>
 			../
-		</a></div>
+		</button></div>
 		
-		<div class="dLink"><a href="mystory/me.html">
+		<div class="dLink"><button class="button" ondblclick="window.location.href = 'mystory/me.html' + '?id=' + frameId">
 			<div class="dIcon dIcon-Txt"></div>
 			Me
-		</a></div>
+		</button></div>
 		
-		<div class="dLink"><a href="mystory/now.html">
+		<div class="dLink"><button class="button" ondblclick="window.location.href = 'mystory/now.html' + '?id=' + frameId">
 			<div class="dIcon dIcon-Txt"></div>
 			Now
-		</a></div>
+		</button></div>
 		
-		<div class="dLink"><a href="mystory/how.html">
+		<div class="dLink"><button class="button" ondblclick="window.location.href = 'mystory/how.html' + '?id=' + frameId">
 			<div class="dIcon dIcon-Txt"></div>
 			How
-		</a></div>
+		</button></div>
 		
-		<div class="dLink"><a href="mystory/true.html">
+		<div class="dLink"><button class="button" ondblclick="window.location.href = 'mystory/true.html' + '?id=' + frameId">
 			<div class="dIcon dIcon-Txt"></div>
 			True
-		</a></div>
+		</button></div>
 		
-		<div class="dLink"><a href="mystory/forgive.html">
+		<div class="dLink"><button class="button" ondblclick="window.location.href = 'mystory/forgive.html' + '?id=' + frameId">
 			<div class="dIcon dIcon-Txt"></div>
 			許す
-		</a></div>
+		</button></div>
 		
-		<div class="dLink"><a href="mystory/hurt.html">
+		<div class="dLink"><button class="button" ondblclick="window.location.href = 'mystory/hurt.html' + '?id=' + frameId">
 			<div class="dIcon dIcon-Txt"></div>
 			Hurt
-		</a></div>
+		</button></div>
 		
-		<div class="dLink"><a href="mystory/blood.html">
+		<div class="dLink"><button class="button" ondblclick="window.location.href = 'mystory/blood.html' + '?id=' + frameId">
 			<div class="dIcon dIcon-Txt"></div>
 			血液
-		</a></div>
+		</button></div>
 		
 	</body>
 </html>

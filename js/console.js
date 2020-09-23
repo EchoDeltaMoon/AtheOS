@@ -1,5 +1,6 @@
 let inProgram = 0;
 let lastInput = '';
+let anyKey = 0;
 
 $(document).ready( () => {
   printDefault();
@@ -8,10 +9,16 @@ $(document).ready( () => {
       if(e.which == 13) { // enter
         let value = $(this).val();
         $(this).val('');
+        e.preventDefault();
+        if (anyKey) {
+          lastInput = '';
+          anyKey = 0;
+          promiseResolve();
+          return;
+        }
+        if (value.trim().length < 1) return;
         lastInput = value;
         printf('$:' + value);
-        e.preventDefault();
-        if (value.trim().length < 1) return;
         if (!inProgram) {
           parseValue(value);
         } else {

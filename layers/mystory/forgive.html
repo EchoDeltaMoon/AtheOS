@@ -10,20 +10,35 @@
 		<link rel="stylesheet" type="text/css" href="../../css/csshake.css">
 		<style> 
 			body {background-color: #864550 ; color: black;} 
-			a {color: #400d4f;} 
+			button {
+				font-family:'Courier';
+				font-weight:normal;
+				text-align:center;
+				font-size:20px; 
+				letter-spacing:9px;
+				line-height:1;
+				color: #400d4f;
+				margin: auto;
+			} 
+			button:hover {color: #ce73ce; cursor:help;}
 		</style>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="../../js/audio.js"></script>
 		<script>
-			audioStoryStopAll();
-			audioStoryPlay(2);
+			let frameId = 0;
+			$(document).ready(() => {
+				const urlParams = new URLSearchParams(window.location.search);
+				frameId = urlParams.get('id');
+				$(`#win-id-${frameId} .win-text`, window.parent.document).html('C:/ユーザー/AL1-CE/layer/物語/許す.txt');
+			});
+			audioStoryPlay(1);
 		</script>
 	</head>	
 	
-	<body>
+	<body onunload='audioStoryStopAll();'>
 		<div id="backbut">
-			<a href="../my-story.html" class="shake shake-constant"><h1> Go Back </h1></a>
+			<button class="button shake shake-constant" onclick="window.location.href = '../my-story.html' + '?id=' + frameId"> Go Back </button>
 		</div>
 		<br>
 		<span style="text-align: left;">

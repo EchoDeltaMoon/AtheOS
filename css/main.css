@@ -44,6 +44,18 @@ h5 { font-size:10px; }
 
 .hide { display:none; }
 
+.button {
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+button:active {
+  border: none;
+  box-shadow: none;
+}
+
 /* Animations */
 
 .glowtext { animation: titleAnim 5s infinite; }

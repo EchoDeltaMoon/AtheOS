@@ -6,21 +6,20 @@
 	margin: 10px;
 	float:left;
 	
+}
+.dLink button{
+	font-family:'Courier';
+	margin: 0px auto 0px auto;
 	text-align: center;
 	font-size:14px;
 	font-family:'Courier';
 	font-weight:normal;
 	line-height:1;
 	letter-spacing:5px;
-}
-.dLink a{
-	margin: 0px auto 0px auto;
-	text-align: center;
-	line-height: 1.5;
 	text-shadow: 1px 1px black;
 	color: #e5b7e5; text-decoration:none;
 } 
-.dLink a:hover { color: #ce73ce; cursor:help; }
+.dLink button:hover { color: #ce73ce; cursor:help; }
 
 .dIcon{
 	margin: auto;

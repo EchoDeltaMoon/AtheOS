@@ -9,20 +9,34 @@
 		<link rel="stylesheet" type="text/css" href="../../css/main.css">
 		<style> 
 			body {background-color: #fcc5ea ; color: black;} 
-			a {color: #400d4f;} 
+			button {
+				font-family:'Courier';
+				font-weight:normal;
+				text-align:center;
+				font-size:20px; 
+				letter-spacing:9px;
+				line-height:1;
+				color: #400d4f;
+			} 
+			button:hover {color: #ce73ce; cursor:help;}
 		</style>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="../../js/audio.js"></script>
 		<script>
-			audioStoryStopAll();
+			let frameId = 0;
+			$(document).ready(() => {
+				const urlParams = new URLSearchParams(window.location.search);
+				frameId = urlParams.get('id');
+				$(`#win-id-${frameId} .win-text`, window.parent.document).html('C:/ユーザー/AL1-CE/layer/物語/how.txt');
+			});
 			audioStoryPlay(0);
 		</script>
 	</head>	
 	
-	<body>
+	<body onunload='audioStoryStopAll();'>
 		<div id="backbut">
-			<a href="../my-story.html"><h1> Go Back </h1></a>
+			<button class="button" onclick="window.location.href = '../my-story.html' + '?id=' + frameId"> Go Back </button>
 		</div>
 		<br>
 		<h1>Thoughts</h1>

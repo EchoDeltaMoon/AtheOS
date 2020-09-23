@@ -20,32 +20,32 @@
 		<style>
 			body {background-color: #111111;}
 			#pics {
-    			text-align: justify;
+				display: flex;
+  			flex-wrap: wrap;
+				justify-content: space-between;
+				align-content: space-between;
 			}
-			#pics a{
-				height: 174px;
-    			display: inline-block;
+			button{
+				background-position:center;
+				background-size: cover;
+				width: 32vw; height: 29vh; 
+				padding: 0;
+				border: none;
+				outline: none;
+				margin: 1vh auto 1vh auto;
 			}
-			
+			button:active {
+				border: none;
+				box-shadow: none;
+			}
 			#pics img {
-				left: 0px;
-				width: 300px; height: 170px; 
-				margin: 2px auto 2px auto;
+				opacity: 0;
+				width: 32vw; height: 29vh; 
 			}
-			.back {
-				z-index: 2;
-				position: relative;
-				top: -176px;
-				width: 300px; height: 170px;
-			}
-			.back:hover::after {
+			#pics img:hover {
 				opacity: 0.8;
-				top: 0; left: 0;bottom: 0; right: 0;
-				position: absolute;
-				content: "";
-				background: black url("images/backgrounds/setback.png") no-repeat; 
 			}
-			a:hover {
+			button:hover {
 				cursor: help;
 			}
 
@@ -60,58 +60,45 @@
 	<body>
 		
 		<div id="pics">
-			<a onclick="cBack(1);">
-				<img src="images/backgrounds/ocback1.gif">
-				<div class="back"></div>
-			</a>
-			<a onclick="cBack(2);">
-				<img src="images/backgrounds/ocback2.gif">
-				<div class="back"></div>
-			</a>
-			<a onclick="cBack(3);">
-				<img src="images/backgrounds/ocback3.gif">
-				<div class="back"></div>
-			</a>
-			<a onclick="cBack(4);">
-				<img src="images/backgrounds/ocback4.gif">
-				<div class="back"></div>
-			</a>
-			<a onclick="cBack(5);">
-				<img src="images/backgrounds/ocback5.gif">
-				<div class="back"></div>
-			</a>
-			<a onclick="cBack(6);">
-				<img src="images/backgrounds/ocback6.gif">
-				<div class="back"></div>
-			</a>
-			<a onclick="cBack(7);">
-				<img src="images/backgrounds/ocback7.gif">
-				<div class="back"></div>
-			</a>
-			<a onclick="cBack(8);">
-				<img src="images/backgrounds/ocback8.gif">
-				<div class="back"></div>
-			</a>
-			<a onclick="cBack(9);">
-				<img src="images/backgrounds/ocback9.gif">
-				<div class="back"></div>
-			</a>
-			<a onclick="cBack(10);">
-				<img src="images/backgrounds/ocback10.gif">
-				<div class="back"></div>
-			</a>
-			<a onclick="cBack(11);">
-				<img src="images/backgrounds/ocback11.gif">
-				<div class="back"></div>
-			</a>
-			<a onclick="cBack(12);">
-				<img src="images/backgrounds/ocback12.gif">
-				<div class="back"></div>
-			</a>
-			<a onclick="cBack(13);">
-				<img src="images/backgrounds/ocback13.gif">
-				<div class="back"></div>
-			</a>
+			<button onclick="cBack(1);" style="background-image: url(images/backgrounds/ocback1.png);">
+				<img src="images/backgrounds/setback.png">
+			</button>
+			<button onclick="cBack(2);" style="background-image: url(images/backgrounds/ocback2.png);">
+				<img src="images/backgrounds/setback.png">
+			</button>
+			<button onclick="cBack(3);" style="background-image: url(images/backgrounds/ocback3.png);">
+				<img src="images/backgrounds/setback.png">
+			</button>
+			<button onclick="cBack(4);" style="background-image: url(images/backgrounds/ocback4.png);">
+				<img src="images/backgrounds/setback.png">
+			</button>
+			<button onclick="cBack(5);" style="background-image: url(images/backgrounds/ocback5.png);">
+				<img src="images/backgrounds/setback.png">
+			</button>
+			<button onclick="cBack(6);" style="background-image: url(images/backgrounds/ocback6.png);">
+				<img src="images/backgrounds/setback.png">
+			</button>
+			<button onclick="cBack(7);" style="background-image: url(images/backgrounds/ocback7.png);">
+				<img src="images/backgrounds/setback.png">
+			</button>
+			<button onclick="cBack(8);" style="background-image: url(images/backgrounds/ocback8.png);">
+				<img src="images/backgrounds/setback.png">
+			</button>
+			<button onclick="cBack(9);" style="background-image: url(images/backgrounds/ocback9.png);">
+				<img src="images/backgrounds/setback.png">
+			</button>
+			<button onclick="cBack(10);" style="background-image: url(images/backgrounds/ocback10.png);">
+				<img src="images/backgrounds/setback.png">
+			</button>
+			<button onclick="cBack(11);" style="background-image: url(images/backgrounds/ocback11.png);">
+				<img src="images/backgrounds/setback.png">
+			</button>
+			<button onclick="cBack(12);" style="background-image: url(images/backgrounds/ocback12.png);">
+				<img src="images/backgrounds/setback.png">
+			</button>
+			<button onclick="cBack(13);" style="background-image: url(images/backgrounds/ocback13.png);">
+				<img src="images/backgrounds/setback.png">
+			</button>
 		</div>
 		
 	</body>

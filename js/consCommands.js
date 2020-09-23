@@ -11,19 +11,37 @@ const toFill = 12;
 function printf(text, color = 'white') {
   if (!text) return;
   let cont = $('#content');
-  let output = $(`<pre style="color: ${color}">${text}</pre>`);
+  let output;
+  if (typeof color !== 'object') {
+    output = $(`<pre style="color: ${color}">${text}</pre>`);
+  } else {
+    let innerText = '';
+    for (let i = 0; i < text.length; i ++) {
+      let char = text.substr(i, 1);
+      if (char in color) {
+        innerText += `<span style="color: ${color[char]}">${char}</span>`;
+      } else {
+        innerText += `<span style="color: white">${char}</span>`;
+      }
+    }
+    output = $(`<pre>${innerText}</pre>`);
+  }
+  
   cont.append(output);
   output[0].scrollIntoView();
 }
 
 function printHelp(val) {
   if (val) {
-    if (!(val in commands)) {
+    let usCom = val in commands;
+    let hdCom = val in hidCommands;
+    if (!(usCom || hdCom)) {
       printf(`Function '${val}' not found`, 'red');
       printf(' ');
       return;
     } else {
-      printf('  ' + val + ': ' + commands[val][1]);
+      let help = usCom ? commands[ val ][1] : hidCommands[ val ][1];
+      printf('  ' + val + ': ' + help);
     }
   } else {
     let length = Object.keys(commands).length;

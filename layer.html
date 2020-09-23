@@ -13,7 +13,13 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="js/audio.js"></script>
 		<script>
-			audioStoryStopAll();
+			let frameId = 0;
+			$(document).ready(() => {
+				const urlParams = new URLSearchParams(window.location.search);
+				frameId = urlParams.get('id');
+				$(`#win-id-${frameId} .win-text`, window.parent.document).html('C:/ユーザー/AL1-CE/layer/');
+				audioStoryStopAll();
+			});
 		</script>
 		
 	</head>
@@ -21,10 +27,10 @@
 	
 	<body>
 	
-		<div class="dLink"><a href="layers/my-story.html">
+		<div class="dLink"><button class="button" ondblclick="window.location.href = 'layers/my-story.html' + '?id=' + frameId">
 			<div class="dIcon dIcon-OFold"></div>
 			物語
-		</a></div>
+		</button></div>
 		
 		
 	</body>

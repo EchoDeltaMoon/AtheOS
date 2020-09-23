@@ -97,14 +97,15 @@ class AWindow {
             top: 16 + (winIndex.length * 2) + '%',
             left: 23 + (winIndex.length * 2) + '%'
         });
+        let frameId = this.url.includes('?')? `&id=${this.id}`: `?id=${this.id}`;
         $window.append(`<div class="win-bar"> 
-				<div class="win-close" onclick="closeWindow(${this.id})"></div>
-				<div class="win-full"  onclick="maximizeWindow(${this.id})"></div>
-				<div class="win-min"  onclick="minimizeWindow(${this.id})"></div>
+				<button class="win-close button" onclick="closeWindow(${this.id})"></button>
+				<button class="win-full button"  onclick="maximizeWindow(${this.id})"></button>
+				<button class="win-min button"  onclick="minimizeWindow(${this.id})"></button>
 				<div class="win-text">${this.link}</div>
 			</div>
 			<div class="win-content">
-				<iframe class="win-frame" src="${this.url}"></iframe>
+				<iframe class="win-frame" id="win-frame-id-${this.id}" src="${this.url}${frameId}"></iframe>
 			</div>
 			<div class="resizer"></div>`);
         this.setListeners();
