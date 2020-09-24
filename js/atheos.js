@@ -47,8 +47,54 @@ function closeWindow(id) {
     windowCounter();
 }
 function maximizeWindow(id) {
-    let url = $('#win-id-' + id).find('.win-frame').attr('src');
-    window.open(url, '_blank');
+    //let url = $('#win-id-' + id).find('.win-frame').attr('src');
+    //window.open(url, '_blank');
+    let win = $('#win-id-' + id);
+    let pos = win.offset();
+    let size = {w: win.width(), h: win.height()};
+    let type = (pos.left < 2 && pos.top < 2 && size.w > $(window).width() - 12 && size.h > $(window).height() - 12)? false : true; //false - minimize, true - maximize
+    if (type == true) {
+        win.attr({
+            'data-pos-x': pos.left,
+            'data-pos-y': pos.top,
+            'data-size-w': size.w,
+            'data-size-h': size.h
+        });
+    }
+    setTimeout(__maxWindow, 1000 / 60, win, type);
+}
+function __maxWindow(win, type) {
+    let pos = win.offset();
+    let size = {w: win.width(), h: win.height()};
+    let oleft = win.attr('data-pos-x');
+    let otop = win.attr('data-pos-y');
+    let ow = win.attr('data-size-w');
+    let oh = win.attr('data-size-h');
+
+    let lerpPos = type ? {top: 0, left: 0} : {top: otop, left: oleft};
+    let lerpSize = type ? {w: $(window).width() - 9, h: $(window).height() - 9} : {w: ow, h: oh};
+    
+    let newPos = {
+        top: lerp(pos.top, lerpPos.top, 0.2),
+        left: lerp(pos.left, lerpPos.left, 0.2)
+    }
+    let newSize = {
+        w: lerp(size.w, lerpSize.w, 0.2),
+        h: lerp(size.h, lerpSize.h, 0.2)
+    }
+    win.offset(newPos);
+    win.width(newSize.w);
+    win.height(newSize.h);
+    if (type == true) {
+        if (newPos.left < 1 && newPos.top < 1 && newSize.w > $(window).width() - 12 && newSize.h > $(window).height() - 12) return;
+    } else {
+        if (newPos.left > oleft - 1 && newPos.top > otop - 1 && newSize.w < ow + 1 && newSize.h < oh + 1) return;
+    }
+    console.log('timeout')
+    setTimeout(__maxWindow, 1000 / 60, win, type);
+}
+function lerp(v0, v1, t) {
+    return v0*(1-t)+v1*t
 }
 function minimizeWindow(id) {
     $('#win-id-' + id).css('display', 'none');
@@ -139,6 +185,12 @@ class AWindow {
         const minWidth = 500;
         const minHeight = 200;
         let $window = $('#win-id-' + this.id);
+        win.attr({
+            'data-pos-x': $window.offset().left,
+            'data-pos-y': $window.offset().top,
+            'data-size-w': $window.width(),
+            'data-size-h': $window.height()
+        });
         let $list = $window.find('.resizer');
         $list.on('mousedown', function () {
             $window.draggable('disable');
