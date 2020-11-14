@@ -185,7 +185,7 @@ class AWindow {
         const minWidth = 500;
         const minHeight = 200;
         let $window = $('#win-id-' + this.id);
-        win.attr({
+        $window.attr({
             'data-pos-x': $window.offset().left,
             'data-pos-y': $window.offset().top,
             'data-size-w': $window.width(),

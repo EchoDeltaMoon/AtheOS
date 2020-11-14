@@ -41,6 +41,8 @@
 		</audio>
 
 		<script>
+			document.getElementById("snd-boot").volume = 0.5;
+			document.getElementById("snd-loaded").volume = 0.5;
 			document.getElementById("snd-boot").play();
 			setTimeout(() => {
 				$('#loader').hide();
