@@ -18,7 +18,12 @@ $(document).ready( () => {
         }
         if (value.trim().length < 1) return;
         lastInput = value;
-        printf('$:' + value);
+        if (checkHacker(value)) {
+          printf('Look at you, hacker', 'cyan');
+          return;
+        } else {
+          printf('$:' + value);
+        }
         if (!inProgram) {
           parseValue(value);
         } else {
@@ -29,8 +34,14 @@ $(document).ready( () => {
 });
 
 function parseValue(val) {
-  ///parse here
+  /// parse here
+  val = val.replace('<', ' ');
   let text = val.split(' ').filter(i => i);
+  if (text.length == 0) {
+    printf(`No function supplied`, 'red');
+    printf(' ');
+    return;
+  }
   let usCom = text[0] in commands;
   let hdCom = text[0] in hidCommands;
   if (!(usCom || hdCom)) {
@@ -40,10 +51,18 @@ function parseValue(val) {
   }
   let func = usCom ? commands[ text[0] ][0] : hidCommands[ text[0] ][0];
   func(text[1]);
-  //else goes here
+  // else goes here
   if (text[0] !== 'cls' && !inProgram) {
     printf(' ');
   }
+}
+
+function checkHacker(val) {
+  /// yes you are
+  if (val.search('<\/?.*>') > -1) {
+    return true;
+  }
+  return false;
 }
 
 function printDefault() {
