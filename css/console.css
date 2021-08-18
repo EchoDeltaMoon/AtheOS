@@ -60,3 +60,76 @@ pre {
   max-width: 100%;
   max-height: 100%;
 }
+
+.table {
+  display: table;
+  width: 90%;
+  border-collapse: separate;
+  border-spacing: 0 0.5px;
+  table-layout: auto; /* fixed; */
+  text-align: left;
+}
+
+.header {
+  display: table-row;
+  clear: both;
+  text-align: left; /* center; */
+}
+.header-col {
+  display: table-cell;
+}
+
+.row {
+  display: table-row;
+  clear: both;
+  text-decoration: none;
+  /* color: #000000; */
+  /* background-color: #ffffff; */
+}
+
+.col {
+  display: table-cell;
+}
+
+.col:first-child {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*
+.col:first-child {
+  position: relative;
+  left: 25px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  padding: 0 15px 0 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.col:nth-child(2) {
+  position: relative;
+  left: 25px;
+}
+.col:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+*/
+
+.col-file {
+  color: aqua;
+}
+
+.col-dir {
+  background-color: aqua;
+  color: black;
+}
+
+.pagination {
+  font-size:64px;
+  border: 3px solid white;
+  text-align: center;
+  vertical-align: central;
+}

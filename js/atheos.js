@@ -99,6 +99,9 @@ function lerp(v0, v1, t) {
 function minimizeWindow(id) {
     $('#win-id-' + id).css('display', 'none');
 }
+function updateWindow(id) {
+    $('#win-frame-id-' + id).attr( 'src', function ( i, val ) { return val; });
+}
 function sortWindows() {
     for (let i = 0; i < winIndex.length; i++) {
         if (winIndex[i].id !== i) {
@@ -148,6 +151,7 @@ class AWindow {
 				<button class="win-close button" onclick="closeWindow(${this.id})"></button>
 				<button class="win-full button"  onclick="maximizeWindow(${this.id})"></button>
 				<button class="win-min button"  onclick="minimizeWindow(${this.id})"></button>
+				<button class="win-upd button"  onclick="updateWindow(${this.id})"></button>
 				<div class="win-text">${this.link}</div>
 			</div>
 			<div class="win-content">

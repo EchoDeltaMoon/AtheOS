@@ -95,6 +95,7 @@
 
 .win-close, 
 .win-full,
+.win-upd,
 .win-min{
 	background-position:center;
 	background-size: cover;
@@ -108,10 +109,11 @@
 .win-close { background-image: url("../images/oc-img/closeicon.png"); }
 .win-full { background-image: url("../images/oc-img/fullviewicon.png"); }
 .win-min { background-image: url("../images/oc-img/minimizeicon.png"); }
+.win-upd { background-image: url("../images/oc-img/updateicon.png"); }
 
 .win-text{
 	background-color: #7a6573; color: white;
-	width: calc( 100% - 72px );
+	width: calc( 100% - 96px );
 	margin: auto;
 	height: 22px;
 	box-sizing: border-box;

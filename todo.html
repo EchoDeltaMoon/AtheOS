@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title> [ todo ] </title>
+		<link rel="icon" href="/images/logo.gif">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=0.4">
+		
+		<style>
+			body { background: black; color: white; text-align: left; padding: 1px;}
+		</style>
+	</head>
+	
+	<body>
+        <br>
+        <hr>
+        <h1 style="text-align: center;">AtheOS upgrade ToDo list</h1>
+        <hr>
+        <br>
+
+        <h2 class="doing">Be a nice architect</h2>
+        <h2 class="doing">Basic bash commands</h2>
+        <h2 class="doing">Make bash resemble bash more</h2>
+        <h2 class="doing">Bash command modifiers --help -h</h2>
+        <h2 class="doing">Bash layer readability</h2>
+        <h2 class="doing">Bash command remember</h2>
+        <h2 class="doing">Bash background change</h2>
+        <h2 class="todo">Add desktop buddy/pet</h2>
+        <h2 class="todo">Add update announcer? Maybe integrate into pet</h2>
+        <h2 class="todo">Add window constraints</h2>
+        <h2 class="todo">More window resize points</h2>
+        <h2 class="todo">Save window state in cookies</h2>
+        <h2 class="todo">Draggable icons</h2>
+        <h2 class="todo">Redesign desktop</h2>
+        <h2 class="todo">Knowledge page</h2>
+        <h2 class="todo">Window manager redesign</h2>
+        <h2 class="todo">More layers</h2>
+        <h2 class="todo">More backgrounds</h2>
+        <h2 class="todo">Add command queue to rogue</h2>
+        <h2 class="todo">Finish rogue</h2>
+        <h2 class="todo">Profiles</h2>
+        <h2 class="todo">Write about page</h2>
+        <h2 class="todo">Socials?</h2>
+        <h2 class="todo">Blog tool</h2>
+        <h2 class="todo">More todos</h2>
+        <h2 class="done">Start todo list</h2>
+        <h2 class="done">Add reload window button</h2>
+
+        <script>
+            const ttodo = '<span style="color: red;">x</span> ';
+            const tdoing = '<span style="color: orange;">o</span> ';
+            const tdone = '<span style="color: greenyellow;">v</span> ';
+
+            $('.todo').each( function() {
+                $(this).html( ttodo + $(this).html() );
+            } );
+            $('.doing').each( function() {
+                $(this).html( tdoing + $(this).html() );
+            } );
+            $('.done').each( function() {
+                $(this).html( tdone + $(this).html() );
+            } );
+        </script>
+	</body>
+</html>
